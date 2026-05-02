@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x1f680; NFT Destekli Telif Korumal&imath; Blog Sistemi</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="-nft-destekli-telif-korumalı-blog-sistemi">🚀 NFT Destekli Telif Korumalı Blog Sistemi</h1>
+<p>Bu proje; Node.js, Express ve MongoDB kullanılarak geliştirilmiş, makale yazarlarının içeriklerini blockchain üzerinde NFT olarak tescilleyebildiği hibrit bir blog platformudur.</p>
+<p>Admin paneli üzerinden paylaşılan her yazı, <strong>Pinata (IPFS)</strong> ve <strong>Viem.js</strong> entegrasyonu sayesinde telif haklarını korumak adına birer ERC-721 tokenine dönüştürülebilir.</p>
+<hr>
+<h2 id="-özellikler">✨ Özellikler</h2>
+<ul>
+<li>
+<p><strong>Full CRUD İşlemleri:</strong> Blog yazıları oluşturma, okuma, güncelleme ve silme.</p>
+</li>
+<li>
+<p><strong>JWT Kimlik Doğrulama:</strong> Admin paneli için güvenli Kayıt Ol (Register) ve Giriş Yap (Sign In) sistemleri.</p>
+</li>
+<li>
+<p><strong>Rol Tabanlı Erişim:</strong> Ziyaretçiler sadece yazıları okuyabilirken, Adminler tüm içerik ve NFT süreçlerini yönetebilir.</p>
+</li>
+<li>
+<p><strong>Web3 &amp; NFT Entegrasyonu:</strong></p>
+</li>
+<li>
+<ul>
+<li><strong>Meta veri Hashleme:</strong> Blog gövdesi ve başlığı hashlenerek benzersiz bir veri seti oluşturulur.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><strong>IPFS Kaydı:</strong> Veriler Pinata aracılığıyla merkeziyetsiz depolama birimine (IPFS) yüklenir.</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><strong>Blockchain Minting:</strong> Viem.js kullanılarak akıllı kontrat üzerinden NFT oluşturulur.</li>
+</ul>
+</li>
+<li>
+<p><strong>Akıllı Kontrat:</strong> Proje, Sepolia/Mainnet üzerindeki 0x280708E39295b01E3B6F76c29c36654C4c9F00Ad kontrat adresi ile etkileşim kurar.</p>
+</li>
+</ul>
+<hr>
+<h2 id="️-kullanılan-teknolojiler">🛠️ Kullanılan Teknolojiler</h2>
+<ul class="contains-task-list">
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Backend: Node.js, Express.js</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Veritabanı: MongoDB (Mongoose)</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Güvenlik: JSON Web Token (JWT), BCrypt</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Web3: Viem.js, Pinata IPFS SDK</p>
+</li>
+<li class="task-list-item enabled">
+<p><input class="task-list-item-checkbox" checked=""type="checkbox"> Frontend: EJS (Template Engine), CSS3</p>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="-nft-mint-süreci-nasıl-çalışır">🚀 NFT Mint Süreci Nasıl Çalışır?</h2>
+<ul>
+<li>
+<p>1- <strong>Hazırlık:</strong> Admin panelinde bir post oluşturulur. Status varsayılan olarak none gelir.</p>
+</li>
+<li>
+<p>2- <strong>IPFS Yükleme (Mint NFT Butonu):</strong> Post içeriği hashlenir ve Pinata'ya yüklenir. Status pending olur.</p>
+</li>
+<li>
+<p>3- <strong>Mintleme (NFT Created Butonu):</strong> Viem.js devreye girer, kullanıcıdan cüzdan onayı alınır ve akıllı kontrata mint işlemi gönderilir.</p>
+</li>
+<li>
+<p>4- <strong>Doğrulama:</strong> İşlem başarıyla tamamlandığında buton bir &quot;Transaction Hash&quot; linkine dönüşür. Bu linke tıklayarak blokzinciri ağındaki tescilinizi görebilirsiniz.</p>
+</li>
+</ul>
+<hr>
+<h2 id="️-kurulum">⚙️ Kurulum</h2>
+<ul>
+<li><strong>1-Depoyu klonlayın:</strong></li>
+</ul>
+<hr>
+<h2 id="git-clone">git clone</h2>
+<ul>
+<li><strong>2-Gerekli paketleri yükleyin:</strong></li>
+</ul>
+<hr>
+<h2 id="npm-install">npm install</h2>
+<ul>
+<li><strong>3- .env dosyasını oluşturun ve bilgileri doldurun:</strong></li>
+</ul>
+<hr>
+<h2 id="mongodb_uriyour_mongodb_urijwt_secretyour_secret_keypinata_api_keyyour_keypinata_secret_api_keyyour_secretprivate_keyyour_wallet_private_keycontract_address0x280708e39295b01e3b6f76c29c36654c4c9f00ad">MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+PINATA_API_KEY=your_key
+PINATA_SECRET_API_KEY=your_secret
+PRIVATE_KEY=your_wallet_private_key
+CONTRACT_ADDRESS=0x280708E39295b01E3B6F76c29c36654C4c9F00Ad</h2>
+<ul>
+<li><strong>4-Uygulamayı başlatın:</strong></li>
+</ul>
+<hr>
+<h2 id="npm-start">npm start</h2>
+
+            
+            
+        </body>
+        </html>

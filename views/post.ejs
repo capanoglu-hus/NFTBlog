@@ -1,0 +1,12 @@
+<h1><%= data.title %></h1>
+<article class="article">
+    <%= data.body %>
+</article>
+<h3>
+<% if (data.nft.status === 'minted') { %>
+                    <!-- Status: none ise MINT NFT butonu -->
+    <a href="https://sepolia.etherscan.io/tx/<%= data.nft.txHash %>" target="_blank" class="btn" style="background-color: #2196F3; text-decoration: none; font-size: 12px;">
+        VIEW NFT TX HASH
+    </a>
+    <%  }%>
+</h3>

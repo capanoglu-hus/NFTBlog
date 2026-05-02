@@ -1,0 +1,42 @@
+<div class="admin-title">
+    <h2> Posts </h2>
+    <a href="/add-post" class="button"> + Add New</a>
+</div>
+
+<ul class="admin-posts">
+    <% data.forEach(post => { %>
+        <li>
+            <a href="/post/<%= post._id %>">
+                <%= post.title %> &nearr;
+            </a>
+            
+            <div class="admin-post-controls">
+                <a href="/edit-post/<%= post._id %>" class="btn">
+                    EDIT
+                </a>
+                <form action="/delete-post/<%= post._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete" class="btn-delete btn">
+                </form>
+               <!-- NFT Durumuna Göre Değişen Bölüm -->
+                <% if (post.nft.status === 'none') { %>
+                    <!-- Status: none ise MINT NFT butonu -->
+                    <form action="/NFT-post/<%= post._id %>?_method=PUT" method="POST" style="display:inline;">
+                        <input type="submit" value="MINT NFT" class="btn" style="background-color: #4CAF50;">
+                    </form>
+
+                <% } else if (post.nft.status === 'pending') { %>
+                    <!-- Status: pending ise NFT CREATED (Onay bekliyor) butonu -->
+                    <form action="/mint-nft/<%= post._id %>?_method=PUT" method="POST" style="display:inline;">
+                        <input type="submit" value="NFT CREATED" class="btn" style="background-color: #6f4caf;">
+                    </form>
+
+                <% } else if (post.nft.status === 'minted') { %>
+                    <!-- Status: minted ise Hash linki -->
+                    <a href="https://sepolia.etherscan.io/tx/<%= post.nft.txHash %>" target="_blank" class="btn" style="background-color: #2196F3; text-decoration: none; font-size: 12px;">
+                        VIEW TX HASH
+                    </a>
+                <% } %>
+            </div>
+        </li>
+    <% }); %>
+</ul>
