@@ -60,34 +60,27 @@ Admin paneli üzerinden paylaşılan her yazı, **Pinata (IPFS)** ve **Viem.js**
 ## ⚙️ Kurulum
 
 - **1-Depoyu klonlayın:**
-  
---- 
+'''
 git clone
----
-
+'''
 - **2-Gerekli paketleri yükleyin:**
-  
----
+'''
 npm install
----
-
-
-
+'''
 - **3- .env dosyasını oluşturun ve bilgileri doldurun:**
 
----
 
+'''
 MONGODB_URI=your_mongodb_uri
 JWT_SECRET=your_secret_key
 PINATA_API_KEY=your_key
 PINATA_SECRET_API_KEY=your_secret
 PRIVATE_KEY=your_wallet_private_key
 CONTRACT_ADDRESS=0x280708E39295b01E3B6F76c29c36654C4c9F00Ad
-
----
+'''
 
 - **4-Uygulamayı başlatın:**
----
+'''
 npm start
----
+'''
 
