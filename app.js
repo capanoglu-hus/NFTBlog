@@ -28,7 +28,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://husniyecapanoglu_db_user:ZJcun862fsYW0xee@cluster0.gqgzlw4.mongodb.net/?appName=Cluster0', // .env dosyasından çekmek en iyisidir
+        mongoUrl: 'mongodb+srv://husniyecapanoglu_db_user:password@cluster0.gqgzlw4.mongodb.net/?appName=Cluster0', // .env dosyasından çekmek en iyisidir
         collectionName: 'sessions', // Oturumların saklanacağı koleksiyon adı
         ttl: 14 * 24 * 60 * 60, // 14 gün
         autoRemove: 'native' // Süresi dolan oturumları otomatik siler
